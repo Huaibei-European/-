@@ -42,7 +42,7 @@ response = requests.post(url=url, data=data, headers=headers)
 html_data = response.text
 selector = parsel.Selector(html_data)
 
-max_page_num = int(selector.css('.zsml-page-box li:nth-last-child(2) a::text').get())
+max_page_num = int(selector.css('.zsml-page-box li:nth-last-child(3) a::text').get())
 print(max_page_num)
 
 for page in range(1, max_page_num + 1):
